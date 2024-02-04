@@ -1,7 +1,8 @@
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/Footer";
 
-const Open_Sanss= Open_Sans({ subsets: ["latin"] });
+const Open_Sanss = Open_Sans({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Google Clone",
@@ -11,7 +12,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={Open_Sanss.className}>{children}</body>
+      <body className={Open_Sanss.className}>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
