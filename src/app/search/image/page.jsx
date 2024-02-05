@@ -3,13 +3,15 @@ import Link from "next/link";
 import React from "react";
 
 export default async function page({ searchParams }) {
+  // const startIndex = searchParams.start || "1"
+  await new Promise((resolve) => setTimeout(resolve, 10000));
   const res = await fetch(
     `https://www.googleapis.com/customsearch/v1?key=${process.env.GOOGLE_API_KEY}&cx=${process.env.GOOGLE_CX_KEY}&q=${searchParams.searchTerm}&searchType=image`
   );
   if (!res.ok) console.log("eawe");
   const data = await res.json();
   const results = data.items;
-  // console.log(results);
+  console.log(results);
 
   if (!results) {
     return (
@@ -27,10 +29,6 @@ export default async function page({ searchParams }) {
     );
   }
   return (
-    <div className="">
-      {results && 
-          <ImageSearchResult results={data} />
-      }
-    </div>
+    <div className="">{results && <ImageSearchResult results={data} />}</div>
   );
 }

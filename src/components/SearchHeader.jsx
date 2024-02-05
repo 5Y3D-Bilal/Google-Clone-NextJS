@@ -8,7 +8,7 @@ import SearchHeaderOptions from "./SearchHeaderOptions";
 
 export default function SearchHeader() {
   return (
-    <header className="sticky top-0 bg-white">
+    <header className="sticky top-0 bg-white z-[100]">
       <div className="flex w-full p-6 items-center justify-between">
         <Link href="/">
           <Image
