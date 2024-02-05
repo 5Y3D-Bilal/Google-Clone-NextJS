@@ -4,6 +4,7 @@ import React from "react";
 import SearchBoxforPage from "./SearchBoxforPage";
 import { RiSettings4Fill } from "react-icons/ri";
 import { TbGridDots } from "react-icons/tb";
+import SearchHeaderOptions from "./SearchHeaderOptions";
 
 export default function SearchHeader() {
   return (
@@ -28,6 +29,7 @@ export default function SearchHeader() {
           Sign in
         </button>
       </div>
+      <SearchHeaderOptions />
     </header>
   );
 }
